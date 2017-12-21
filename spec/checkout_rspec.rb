@@ -1,7 +1,12 @@
 require_relative '../lib/checkout'
+require_relative '../lib/rules/rules_set'
 
 RSpec.describe Checkout do
-  let(:co) { described_class.new }
+  let(:pricing_rules) { RulesSet.new }
+  let(:co) { described_class.new(pricing_rules) }
+  let(:content) do
+    "VOUCHER/Cabify Voucher/5.00\nTSHIRT/Cabify T-Shirt/20.00\nMUG/Cabify Coffe Mug/7.50"
+  end
 
   describe "#scan" do
     before do

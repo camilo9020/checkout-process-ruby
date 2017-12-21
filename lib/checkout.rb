@@ -1,6 +1,5 @@
 require_relative 'store'
 require_relative 'order'
-require_relative 'rules/rules'
 
 class Checkout
   attr_reader :order, :total, :store
