@@ -6,7 +6,8 @@ class Checkout
 
   def initialize(pricing_rules)
     @rules = pricing_rules
-    @store = Store.new
+    @store = Store.new("bd/bd_products.txt")
+    @store.load_products
     @order = Order.new
   end
 

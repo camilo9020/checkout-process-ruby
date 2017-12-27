@@ -10,6 +10,7 @@ RSpec.describe Checkout do
 
   describe "#scan" do
     before do
+      allow(File).to receive(:open).with(any_args).and_return(content)
       co
     end
     it { expect(co.scan("TSHIRT")).to eq("Product scanned") }
