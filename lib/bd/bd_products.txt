@@ -1,0 +1,3 @@
+VOUCHER/Cabify Voucher/5.00
+TSHIRT/Cabify T-Shirt/20.00
+MUG/Cabify Coffe Mug/7.50

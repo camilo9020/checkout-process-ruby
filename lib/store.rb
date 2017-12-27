@@ -3,20 +3,26 @@ require_relative 'product'
 class Store
   attr_reader :products
 
-  def initialize
+  def initialize(file_path)
+    @file_path = file_path
     @products = {}
-    load_products
+  end
+
+  def load_products
+    file = File.open(root_path, 'r')
+    file.each_line do |line|
+      row = line.delete("\n").split("/")
+      add_product(Product.new(row[0], row[1], row[2].to_f))
+    end
+  end
+
+  def add_product(product)
+    products[product.code] = product
   end
 
   private
 
-  def load_products
-    add_product("VOUCHER", "Cabify Voucher", 5.00)
-    add_product("TSHIRT", "Cabify T-Shirt", 20.00)
-    add_product("MUG", "Cabify Coffe Mug", 7.50)
-  end
-
-  def add_product(code, name, price)
-    products[code] = Product.new(code, name, price)
+  def root_path
+    File.join(File.dirname(__FILE__), @file_path)
   end
 end
