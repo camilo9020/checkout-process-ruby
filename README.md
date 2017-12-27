@@ -5,25 +5,22 @@ the architecture was designed with an OPP approach so that new functionalities c
 
 ## Product
 
-Product class allows create individual instances with  the attributes ```code```, ```name``` and ```price```,
-all the the info necessary to add a new product to the ```Store``` class.
+Product class allows create individual instances with  the attributes ```code```, ```name``` and ```price```, all the the info necessary to add a new product to the ```Store``` class.
 
 ## Store
 
-This class groups instances of ```Product``` class, with two private methods, ```add_product``` method that receives ```code```, ```name``` and ```price``` like parameters and ```load_products``` method, to create all products inside the ```Store``` instance.  For a future improve, ```load_products``` method could receive a external file like a data base to load a big quantity of products.
+This class receive a file path that point to a fili where is the products data base, the class has two methods, ```add_product``` method that receives ```code```, ```name``` and ```price``` like parameters and ```load_products``` method that open the file and read each line, to create all products inside the ```Store``` instance. 
 
 ## Order Item
 
 Instances of ```OrderItem``` class contain the following attributes: ```code``` to identify the product
-associated, it's a reader attribute that can't change after created, and ``` quantity```, ```unit_price```
-and``` discount``` like attributes accessor , which change according to the number of scanned products
-and discounts available.
+associated, it's a reader attribute that can't change after created, and ``` quantity```, ```unit_price``` and``` discount``` like attributes accessor , which change according to the number of scanned products and discounts available.
 
 ## Order
 
 Order class stores instances of ```OrderItem``` in the ```items``` variable, through the ```add_item``` method, each item has an attribute ```quantity``` to accumulate the same kind of products, this design facilitates later calculations in ```Checkout```.
 
-## Rules
+## RulesSet
 
 This class allows instantiate all available rules at the same time with the ```load_rules``` method
 (for future improvements, these rules could come from an external file to load a large number of
