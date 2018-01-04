@@ -1,7 +1,6 @@
 # Cabify's checkout process
 
-Hello **Cabify team**, this is my solution for the [rubyChallenge](https://github.com/cabify/rubyChallenge),
-the architecture was designed with an OPP approach so that new functionalities can be easily added. Below some notes explaining what does each class, how they interact with each other and some additional considerations.
+The architecture was designed with an OPP approach so that new functionalities can be easily added. Below some notes explaining what does each class, how they interact with each other and some additional considerations.
 
 ## Product
 
